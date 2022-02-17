@@ -1,6 +1,6 @@
 # List Price Analysis
 
-![map](/images/KC_simplemap_Oct2013.jpg.jpg)
+![map](/images/KC_simplemap_Oct2013.jpg)
 
 ## Business Problem
 
