@@ -23,7 +23,7 @@ The final model had an R-square value of 0.615 which can be described as: 61.5% 
 
 The coeffients in this model allow for adjustment on the price be made, for example:
     
-    -The model for 'sqft_living' has a coefficient of 111. This is interpeted by saying each unit of sqft living changes the price by 111 dollars. So taking the known sqft of living space in the house and multipling it by 111 will lead to price estimate to account for the sqft living. For example if a house had 1,500 sqft living, the calculation would be 1,500 x 111 which would tell us to add 166,500 dollars to the price.
+   -The model for 'sqft_living' has a coefficient of 111. This is interpeted by saying each unit of sqft living changes the price by 111 dollars. So taking the known sqft of living space in the house and multipling it by 111 will lead to price estimate to account for the sqft living. For example if a house had 1,500 sqft living, the calculation would be 1,500 x 111 which would tell us to add 166,500 dollars to the price.
     -The model for 'view_EXCELLENT' has a coefficient of 178,710. This is a categorical variable and so this is interpeted as if the house has that characteristic then add 178,710 dollars to the price.
 
 The same process would be followed for year built, number of floors, and view. Once all price values are found they would be added together to get a list price estimate. 
