@@ -12,7 +12,7 @@ The data used for this project was from the King Country Dataset, a dataset of r
 
 ## Methods
 
-This project used the King County housing data to make a regression model. The model was used to find a base price for a home and find the associated dollar amount for the features to be added or subtracted from the base price. 
+This project used the King County housing data to make a regression model. The coefficients from this model was used to find the associated dollar amount for the different features. 
 
 The data was cleaned, scrubbed, and explored by removing multicollinearity, removing outliers, scaling the data, accounting for categorical data, and removing data that was heteroscedastic. 
  
@@ -21,18 +21,18 @@ The data was cleaned, scrubbed, and explored by removing multicollinearity, remo
 
 The final model had an R-square value of 0.615 which can be described as: 61.5% of the variations in the dependent variable 'price' are explained by the independent variables in our model. A higher R squared value means there is a less chance of error. The remaining percentage (in this model ~ 39%) represents the variance explained by error, the part that the model failed to grasp. This R-square value is relatively low and would need to be raised to use the model for its intended purposes
 
-The coeffients in this model allow for adjustment on the base price be made, two examples are:
+The coeffients in this model allow for adjustment on the price be made, for example:
     
-- The coefficients for the respective grade, view, living sqft, yr built, and floors of the home can be used to adequately adjust the list price, two examples are:
-    
-   -  The coefficient for 'grade_7_average' has a coefficient of -387,936 and the model has an intercept value of 858,720. If it was true that the house was grade average, we would lower the price of the home by 387,936 dollars from the base price of 858,720 dollars which is intercept value found in the model. 
-    -  The coefficient for 'view_EXCELLENT' has a coefficient of 178,710 and the model has an intercept value of 858,720. If it was true that the house had an excellent view, we would raise the price of the home by 178,710 dollars from the base price of 858,720 dollars.
+    -The model for 'sqft_living' has a coefficient of 111. This is interpeted by saying each unit of sqft living changes the price by 111 dollars. So taking the known sqft of living space in the house and multipling it by 111 will lead to price estimate to account for the sqft living. For example if a house had 1,500 sqft living, the calculation would be 1,500 x 111 which would tell us to add 166,500 dollars to the price.
+    -The model for 'view_EXCELLENT' has a coefficient of 178,710. This is a categorical variable and so this is interpeted as if the house has that characteristic then add 178,710 dollars to the price.
+
+The same process would be followed for year built, number of floors, and view. Once all price values are found they would be added together to get a list price estimate. 
 
 ## Conclusion
 
 Interpretion of the regression model led to the following findings:
     
-- The coefficients for the respective grade, view, year built, and sqft of living space of the home can be used to adequately adjust the list price
+- The coefficients for the respective grade, view, year built, and sqft of living space of the home can be used to adequately adjust the list price.
 - The final model had an R-square value of 0.615 this model should be strictly used alongside with personal judgement of the agents.
 
 While this model can be used to help real estate agents come up with a predicted list price for their clients, the model does not have high confidence that the independent variables actually explain the variation in price. This model should be further improved and if it is used in its current state, it should be used with caution 
